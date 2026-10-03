@@ -1,0 +1,46 @@
+[
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "name": "Harjit Dhillon",
+    "phone": "098877 66554",
+    "date": "2026-10-03",
+    "time": "21:00",
+    "guests": 6,
+    "notes": "Birthday party reservation",
+    "status": "pending",
+    "created_at": "2026-10-03T05:56:36.225Z"
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "name": "Gurpreet Singh",
+    "phone": "098765 43210",
+    "date": "2026-10-03",
+    "time": "20:00",
+    "guests": 4,
+    "notes": "Window seating preferred, celebrating anniversary with family",
+    "status": "confirmed",
+    "created_at": "2026-10-03T04:56:36.225Z"
+  },
+  {
+    "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+    "name": "Amanpreet Kaur",
+    "phone": "098123 45678",
+    "date": "2026-10-03",
+    "time": "19:30",
+    "guests": 2,
+    "notes": "Candlelight table, please prepare butter chicken & kulcha",
+    "status": "preparing",
+    "created_at": "2026-10-03T02:56:36.225Z"
+  },
+  {
+    "id": "6ba7b811-9dad-11d1-80b4-00c04fd430c9",
+    "name": "Vikramjit Sharma",
+    "phone": "098234 56789",
+    "date": "2026-10-04",
+    "time": "13:30",
+    "guests": 3,
+    "notes": "Lunch reservation",
+    "status": "pending",
+    "created_at": "2026-10-03T00:56:36.225Z"
+  }
+]

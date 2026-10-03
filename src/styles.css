@@ -1,0 +1,121 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — Ambrocia: Noir & Gold luxury fine-dining.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ * All colors use oklch format.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "Fira Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.125rem;
+  /* Noir & Gold — near-black surfaces with champagne gold accents */
+  --background: oklch(0.165 0.004 85);
+  --foreground: oklch(0.94 0.012 90);
+  --card: oklch(0.21 0.006 85);
+  --card-foreground: oklch(0.94 0.012 90);
+  --popover: oklch(0.21 0.006 85);
+  --popover-foreground: oklch(0.94 0.012 90);
+  --primary: oklch(0.76 0.125 85);
+  --primary-foreground: oklch(0.165 0.004 85);
+  --secondary: oklch(0.26 0.008 85);
+  --secondary-foreground: oklch(0.89 0.07 90);
+  --muted: oklch(0.24 0.007 85);
+  --muted-foreground: oklch(0.66 0.025 88);
+  --accent: oklch(0.26 0.008 85);
+  --accent-foreground: oklch(0.89 0.07 90);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.76 0.125 85 / 22%);
+  --input: oklch(0.76 0.125 85 / 30%);
+  --ring: oklch(0.76 0.125 85 / 50%);
+  --gold-soft: oklch(0.89 0.085 92);
+}
+
+@theme inline {
+  --color-gold-soft: var(--gold-soft);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Thin gold hairline divider */
+@utility gold-rule {
+  height: 1px;
+  width: 4rem;
+  background: linear-gradient(to right, transparent, var(--primary), transparent);
+}
+
+/* Subtle scroll-reveal motion */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
